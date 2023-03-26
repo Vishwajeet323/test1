@@ -1,0 +1,89 @@
+import java.util.Scanner;
+class  jeet1
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		int ip =s.nextInt();
+		int ict=in(ip);
+		System.out.println(ict+"     ict");
+		int dct=dec(ip);
+		System.out.println(dct+"    dct");
+		int count=count(ip);
+		System.out.println("count   "+count);
+		
+		if (ict==count)
+		{
+			System.out.println("not bouncy");
+			/*if (dct<=count)
+			{
+				System.out.println("bouncy");
+			}
+			else
+			{
+				System.out.println("Not bouncy");
+			}*/
+		}
+		else if (dct==count)
+		{
+			System.out.println("not bouncy");
+			/*if (ict<=count)
+			{
+				System.out.println("bouncy");
+			}
+			else
+			{
+				System.out.println("Not bouncy");
+			}*/
+		}
+		else
+		{
+			System.out.println("bouncy");
+		}
+
+
+	}
+	public static int in(int ip)
+	{
+		int rem=ip%10;
+		int ct=0;
+		for (int i=0;ip!=0 ;ip=ip/10 )
+		{
+			i=ip%10;
+			System.out.println(i);
+			if (rem>=i)
+			{
+				//System.out.println(rem+" I "+i);
+				ct++;
+			}
+		}
+		return ct;
+	}
+	public static int dec(int ip)
+	{
+		int rem=ip%10;
+		int ct=0;
+		for (int i=0;ip!=0 ;ip=ip/10 )
+		{
+			i=ip%10;
+			System.out.println(i);
+			if (rem<i)
+			{
+				System.out.println(rem+" D "+i);
+				ct++;
+			}
+		}
+		return ct;
+	}
+	public static int count(int num)
+	{
+		int ct=0;
+		while (num!=0)
+		{
+			num/=10;
+			ct++;
+		}
+		return ct;
+	}
+}
