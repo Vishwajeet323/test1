@@ -1,0 +1,75 @@
+import java.util.Scanner;
+class Bouncy 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter a Number ");
+
+		int num=s.nextInt();
+		if (increase(num))
+		{
+			if (decrease(num))
+			{
+				System.out.println("it bouncy number");
+			}
+		}
+		else
+		{
+			System.out.println("good");
+		}
+	}
+	public static boolean increase(int num)
+	{
+		int rem1=num%10;
+		int large1=0;
+		for (int i=num;i!=0;i/=10 )
+		{
+			int rem=i%10;
+			int large=rem1;
+			large1=large>rem?large:rem;
+
+			
+		}
+	/*	int small1=9;
+		for (int i=num;i!=0 ;i/=10 )
+		{
+			int rem=i%10;
+			int small=rem1;
+			small1=small<rem?small:rem;
+		}
+		System.out.println("large1: "+large1+small1);
+		System.out.println("rem1: "+rem1);*/
+		if (large1!=rem1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public static boolean decrease(int num)
+	{
+		int rem1=num%10;
+		int small1=9;
+		for (int i=num;i!=0 ;i/=10 )
+		{
+			int rem=i%10;
+			int small=rem1;
+			small1=small<rem?small:rem;
+			//System.out.println("rem1: "+rem1);
+			//System.out.println("small1: "+small1);
+		}
+		System.out.println("rem1: "+rem1);
+		System.out.println("small1: "+small1);
+		if (small1!=rem1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
